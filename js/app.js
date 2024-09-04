@@ -33,7 +33,7 @@ function startRecording() {
     	Disable the record button until we get a success or fail from getUserMedia() 
 	*/
 
-	recordButton.disabled = true;
+	recordButton.disabled = false;
 	stopButton.disabled = false;
 	pauseButton.disabled = false
 
