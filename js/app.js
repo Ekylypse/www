@@ -14,8 +14,8 @@ var stopButton = document.getElementById("stopButton");
 var pauseButton = document.getElementById("pauseButton");
 
 //add events to those 2 buttons
-recordButton.addEventListener("pointerdown", startRecording);
-recordButton.addEventListener("pointerup", stopRecording);
+recordButton.addEventListener("touchstart", startRecording);
+recordButton.addEventListener("touchend", stopRecording);
 stopButton.addEventListener("click", stopRecording);
 pauseButton.addEventListener("click", pauseRecording);
 
