@@ -148,6 +148,18 @@ function createDownloadLink(blob) {
 	var upload = document.createElement('a');
 	upload.href="#";
 	upload.innerHTML = "Upload";
+	//Auto Upload
+		  var xhr=new XMLHttpRequest();
+		  xhr.onload=function(e) {
+		      if(this.readyState === 4) {
+		          console.log("Server returned: ",e.target.responseText);
+		      }
+		  };
+		  var fd=new FormData();
+		  fd.append("audio_data",blob, filename);
+		  xhr.open("POST","upload.php",true);
+		  xhr.send(fd);
+	//End Auto Upload
 	upload.addEventListener("click", function(event){
 		  var xhr=new XMLHttpRequest();
 		  xhr.onload=function(e) {
