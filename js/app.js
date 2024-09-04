@@ -33,9 +33,9 @@ function startRecording() {
     	Disable the record button until we get a success or fail from getUserMedia() 
 	*/
 
-	recordButton.disabled = false;
-	stopButton.disabled = false;
-	pauseButton.disabled = false
+	//recordButton.disabled = false;
+	//stopButton.disabled = false;
+	//pauseButton.disabled = false
 
 	/*
     	We're using the standard promise based getUserMedia() 
@@ -75,9 +75,9 @@ function startRecording() {
 
 	}).catch(function(err) {
 	  	//enable the record button if getUserMedia() fails
-    	recordButton.disabled = false;
-    	stopButton.disabled = true;
-    	pauseButton.disabled = true
+    	//recordButton.disabled = false;
+    	//stopButton.disabled = true;
+    	//pauseButton.disabled = true
 	});
 }
 
@@ -86,11 +86,11 @@ function pauseRecording(){
 	if (rec.recording){
 		//pause
 		rec.stop();
-		pauseButton.innerHTML="Resume";
+		//pauseButton.innerHTML="Resume";
 	}else{
 		//resume
 		rec.record()
-		pauseButton.innerHTML="Pause";
+		//pauseButton.innerHTML="Pause";
 
 	}
 }
@@ -99,12 +99,12 @@ function stopRecording() {
 	console.log("stopButton clicked");
 
 	//disable the stop button, enable the record too allow for new recordings
-	stopButton.disabled = true;
-	recordButton.disabled = false;
-	pauseButton.disabled = true;
+	//stopButton.disabled = true;
+	//recordButton.disabled = false;
+	//pauseButton.disabled = true;
 
 	//reset button just in case the recording is stopped while paused
-	pauseButton.innerHTML="Pause";
+	//pauseButton.innerHTML="Pause";
 	
 	//tell the recorder to stop the recording
 	rec.stop();
